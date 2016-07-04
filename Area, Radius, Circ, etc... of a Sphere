@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+				// Seth Williams
+				// CS152L
+				// Homework Question # 3
+				// Finding the surface area, volume, and circumference of a sphere based on a radius entered.
+
+public class Sphere {
+
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		final double PIE = 3.14;
+		{
+			System.out.println("Please enter a radius of a sphere so we can calculate the surface area, ");
+			System.out.println("of a sphere that corresponds with your radius.");
+			double UserInput = (double) keyboard.nextFloat();
+			double area = (double) (4 * PIE * (Math.pow(UserInput, 2)));
+			System.out.println("The surface area based on the radius you entered, is " + area);
+			System.out.println("Now, please enter a radius so the program can calculate a volume");
+			System.out.println("based on the radius entered.");
+		}
+		{
+
+			double UserInput = (double) keyboard.nextFloat();
+			double volume1 = 4 * PIE;
+			double volume2 = UserInput * UserInput * UserInput;
+			double volume3 = volume1 * volume2;
+			double volume4 = volume3 / 3;
+
+			System.out.println("The volume of the sphere based on the radius you entered, is " + volume4);
+			System.out.println("Now, please enter a radius so the program can calculate a circumference.");
+			System.out.println("based on the radius entered.");
+		}
+		{
+			double UserInput = (double) keyboard.nextFloat();
+			double circ1 = 2 * PIE;
+			double circ2 = UserInput * circ1;
+			System.out.println("The circumference of the sphere based on the radius you entered is " + circ2);
+			System.out.println("End of program, re-run if you wish to do so.");
+		}
+
+	}
+
+}
