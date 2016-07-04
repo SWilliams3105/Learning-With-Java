@@ -1,0 +1,44 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
+
+import javax.swing.JFrame;
+
+
+public class MovingBall {
+
+	static JFrame frame;
+	static BufferedImage img;
+	
+	public static void main(String[] args) {
+		img = new BufferedImage(640,480, BufferedImage.OPAQUE);	
+		frame = new JFrame("Red Ball"){
+			public void paint (Graphics g){
+				
+				g.drawImage(img, 0, 0, rootPane);
+			}
+		};
+		frame.setSize(640,480);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		animate();
+		
+	}
+	public static void animate() {
+		Graphics g = img.getGraphics();
+		for (int i = 0, j = 20; i < 530; i += 9, j+= 7){
+			g.setColor(Color.WHITE);
+			g.fillRect(0, 0, 640, 480);
+			g.setColor(Color.RED);
+			g.fillOval(i, j, 50, 50);
+			frame.repaint();
+			try{
+				Thread.sleep(20);
+			}catch (InterruptedException ex) {
+				System.err.println("Thread Issues");
+			}
+		}
+	}
+}
