@@ -1,0 +1,29 @@
+
+public class Quadratic {
+
+	public static void main(String[] args) {
+		// Seth WIlliams
+		// September 3rd, 2015
+		// CS152L
+		// Homework Problem #2
+		// Solving an equation following the Quadratic Formula.
+
+
+		double a = 3;
+		double b = 12;
+		double c = 1;
+
+		double answer1 = (-b + (Math.sqrt((Math.pow(b, 2) - 4*(a)*(c)))))/(2 * a);				
+
+		System.out.println( "\n" + "\t" + "The Answer is " + " \n" + "\t" + "X = " + answer1);
+		
+
+		double answer2 = (-b - (Math.sqrt((Math.pow(b,  2) -4*(a)*(c)))))/(2 * a);
+		System.out.println("\t" +  "Or \n" + " \t" + "X = " + answer2);
+		
+
+	}
+
+}
+
+			
