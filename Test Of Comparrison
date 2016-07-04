@@ -1,0 +1,23 @@
+
+public class Sept10Test {
+
+	public static void main(String[] args) {
+		int k = 14;
+		int m = 15;
+
+		if (k > m)
+		{
+			System.out.println("k is greAter thAn m.");
+		}
+		if (m > k) {
+			System.out.println("m is grEatEr than k");
+		}
+		else if( k == m)
+
+		{
+			System.out.println("k EQuAls m");	
+		}
+	}
+
+
+}
