@@ -1,0 +1,28 @@
+
+public class IfAndOr {
+
+	public static void main(String[] args) {
+		// Practicing AND & OR
+		
+		int k = 1;
+		int m = 4;
+		int n = 11;
+		
+		
+		if (k != m)
+		{ 
+			System.out.println("k is not equal to m.");
+		}
+		if (k > m && m > n)
+		{
+			System.out.println("k is biggest. Both statements true.");
+		}
+		
+		if(k < m | m > n)
+		{
+			System.out.println("One of the statements was true.");
+		}
+
+	}
+
+}
