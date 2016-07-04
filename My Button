@@ -1,0 +1,77 @@
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+
+
+
+
+public class MyButton extends JFrame {
+
+
+
+	public static void main(String[] args) {
+
+
+		JFrame frame = new JFrame("Seth's Useless Button");
+		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);							//Makes window close
+		frame.getContentPane().setBackground(Color.BLUE);						//Sets color
+
+
+		addStuffToFrame(frame.getContentPane());
+
+
+		frame.setSize(200,500);
+		frame.setVisible(true);
+	}
+
+	private static void addStuffToFrame(Container pane) {
+		
+		
+//		JButton button1, button2, button3;
+//		pane.setLayout(new FlowLayout());
+//		button1 = new JButton("1");
+//		button1.setPreferredSize(new Dimension(50,50));
+//		button1.setOpaque(true);
+//		pane.add(button1);
+//		
+//		button2 = new JButton("Big Button");
+//		button2.setPreferredSize(new Dimension(100,100));
+//		button2.setOpaque(true);
+//		pane.add(button2);
+//		
+//		button3 = new JButton("<html>Biggest<br>Button</html>");
+//		button3.setOpaque(true);
+//		button3.setPreferredSize(new Dimension(200,300));
+//		pane.add(button3);
+		
+		
+		
+		pane.setLayout(new FlowLayout());
+		JButton Button1 = new JButton("Sad");							// What is said on the button or the name of the button
+		Button1.setPreferredSize(new Dimension(100, 100)); 				// Was normally 75, 50	// Size of the button
+		Button1.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				System.out.println("Button 1 clicked");
+			}});
+		
+		pane.add(Button1);
+		//HTML Learning www.w3schools.com
+		JButton Button2 = new JButton("<html><center><i>Long<br>Button</i></center></html>");			//We can also use HTML What is said on the button ---I = Italics    BR = Break 
+		Button2.setPreferredSize(new Dimension(50, 50)); 							// Was notmally 200, 150								// Size of the button		
+		Button2.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {							// You can name "ae" anything!
+				System.out.println("Button 2 clicked");
+			}});
+		
+		pane.add(Button2);					//pane.add(Button1);   THIS PUS BUTTON 2 FIRST, If you put 2 then 1, 2 will come first
+		pane.add(Button1);
+
+	}
+
+}
