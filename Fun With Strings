@@ -1,0 +1,27 @@
+
+public class FunWithStrings {
+
+	public static void main(String[] args) {
+		// Playing With Strings
+		
+		
+		String a = "Seth";
+		String eToE = a.replace('e', 'E'); // We're replacing all lower cased "e" as a "E" in string a.
+		String T = new StringBuffer(a).reverse().toString();
+		System.out.println(T);
+		
+		String aPlusa = a + a; 				// This is CONCATONATION!
+		String aPlusE = a + eToE;			// This is CONCATONATION!
+		System.out.println(a + "\t" + eToE + "\t" + aPlusE);
+		
+		String backwardsA = new StringBuffer(a).reverse().toString(); // This is reversing text, and then converting it back into a string.
+		System.out.println("\n" + " \t " + backwardsA);
+		
+		
+		int l = aPlusa.length(); 								// So my name will be "8" characters long, which is why i will see the number 8 in console.
+		int i = a.indexOf( 't' );  								//This is the index of t
+		System.out.println("\n" + "\t" + l);
+		System.out.println(" \n" + "\t" + "First t " + i); 
+	}
+
+}
