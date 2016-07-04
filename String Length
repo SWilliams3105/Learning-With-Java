@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class StringLength {
+
+	public static void main(String[] args) {
+		// Seth Williams
+		// CS152L
+		// Homework problem #4
+		// Finding the length of user input
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Please Enter Any String");
+
+		try{
+			String a = keyboard.nextLine();				// Use "keyboard.nextLine();" if you want an entire line to be read, not just a single word.
+														// because previously you used "keyboard.next();" which only found the length of a single word,
+														// not accounting for spaces between words.
+			System.out.println("\t" + a.length() + " character/s was/were used in this String.");
+			System.out.println("\n" + "\n" + "A try/catch is not useful because the try has nothing to correct. the program is counting the length of the string");
+			System.out.println(" and everything and anything entered by the user is considered a string by the program.");
+			
+			
+		}
+		catch (Exception a) {
+			System.out.println("Please enter a word or a sentence. Please run program again.");
+			
+		}
+		
+		keyboard.close();
+	}
+
+}
