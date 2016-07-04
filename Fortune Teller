@@ -1,0 +1,79 @@
+import java.util.Scanner;
+
+public class FortuneTeller {
+
+	public static void main(String[] args) {
+		// Seth Williams
+		// CS152L
+		// Homework Problem Number 5
+		// Creating a fortune teller, one that works like this: 	http://www.dltk-kids.com/world/japan/images/mfortuner-teller.jpg
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("To calculate your fortune, you must first enter a number between 1 & 4.");
+
+
+
+
+		try{
+			int User = keyboard.nextInt();
+			switch(User){
+			case 1: System.out.println("You have chosen the number 1, please select another number that is 5-8!");
+			break;
+			case 2: System.out.println("You have chosen the number 2, please select another number that is 5-8!");
+			break;
+			case 3: System.out.println("You have chosen the number 3, please select another number that is 5-8!");
+			break;
+			case 4: System.out.println("You have chosen the number 4, please select another number that is 5-8!");
+			break;
+			default: System.out.println("Re-run the code, and next time please enter a number between 1 & 4!");
+			break;
+			}
+
+			int Input = keyboard.nextInt();
+
+
+
+			switch(Input){
+			case 5: System.out.println("You have selected the number 5, now please select one of the following colors" + "\n" + "\t" + "Red"+ "\t" + "\n" + "\t" + "Green" +"\n" + "\t" +  "Blue" + "\n" + "\t" +  "Yellow");
+			break;
+			case 6: System.out.println("You have selected the number 6, now please select one of the following colors" + "\n" + "\t" + "Red"+ "\t" + "\n" + "\t" + "Green" +"\n" + "\t" +  "Blue" + "\n" + "\t" +  "Yellow");
+			break;
+			case 7: System.out.println("You have selected the number 7, now please select one of the following colors" + "\n" + "\t" + "Red"+ "\t" + "\n" + "\t" + "Green" +"\n" + "\t" +  "Blue" + "\n" + "\t" +  "Yellow");
+			break;
+			case 8: System.out.println("You have selected the number 8, now please select one of the following colors" + "\n" + "\t" + "Red"+ "\t" + "\n" + "\t" + "Green" +"\n" + "\t" +  "Blue" + "\n" + "\t" +  "Yellow");
+			break;
+			default: System.out.println("Re-run the code, and next time please enter a number between 5 & 8!");
+			}
+
+			String UserInput = keyboard.next();
+			 switch(UserInput){
+			 case "Green":System.out.println("I like your style.");
+			 break;
+			 case "green": System.out.println(" I like your style.");
+			 break;
+			 case "Red": System.out.println("Nice manual dexterity!");
+			 break;
+			 case "red": System.out.println("Nice manual dexterity!");
+			 break;
+			 case "Blue": System.out.println("You're tremendous!");
+			 break;
+			 case "blue": System.out.println("You're tremendous!");
+			 break;
+			 case "Yellow": System.out.println(" Will you sign my yearbook?");
+			 break;
+			 case "yellow": System.out.println(" Will you sign my yearbook?");
+			 break;
+			 default:System.out.println("Re-run the code, and next time please enter one of the following colors!" + "\n" + "Blue" + "\n" + "Green" + "\n" + "Red" + "\n" + "Yellow");
+			 break;
+			}
+				
+
+		}
+		catch (Exception UserInput){
+			System.out.println("Please re-run the code!");
+		}
+
+		keyboard.close();
+
+	}
+
+}
