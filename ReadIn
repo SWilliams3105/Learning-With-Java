@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class ReadIn {
+
+	public static void main(String[] args) {
+		// Seth Williams
+		// CS152L
+		// Homework Problem #3
+		// Calculating The Sum Of 3 Integers
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Please enter any 3 numbers so we can calculate the sum of them!");
+		
+		try{												// When needing the user to input multiple things, use 
+															//"keyboard.nextInt();" multiple times like this.
+			int UserInput = keyboard.nextInt();
+			int Sum1 = UserInput * keyboard.nextInt();
+			int Sum2 = Sum1 * keyboard.nextInt();
+			System.out.println("The Sum Of All Three Numbers You've Entered Is " + Sum2);
+		
+			
+			
+			
+		} catch (Exception UserInput){
+			System.out.println("Please enter any 3 numbers so we can calculate the sum of them!");
+		}
+		keyboard.close();
+		
+	}
+
+}
