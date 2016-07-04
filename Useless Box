@@ -1,0 +1,22 @@
+import javax.swing.JFrame;
+public class UselessBox extends JFrame {
+
+		//MAKING A USELESSBOX
+	
+	
+	private static final long serialVersionUID = 1L;
+
+	public static void main(String[] args) {
+		// Creating A Useless Box
+
+		UselessBox frame = new UselessBox();
+		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);						//Terminates The Program, Otherwise it will fun forever even if you close the box.
+		frame.setSize(500,100);												//Sets size of window
+		frame.setVisible(true); 											// True has the value of 1, False has the value of 0
+		
+		
+		
+	}
+	
+
+}
