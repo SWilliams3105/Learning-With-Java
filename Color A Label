@@ -1,0 +1,134 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.GridLayout;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
+public class ColorALabel{
+	static int numLabel = 0;
+	static int frHeight = 0;
+	
+	private static void makeAFrame() {
+		   JFrame frame = new JFrame("Coloring By Clicking A Button");
+		   frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		   addStuffToFrame(frame.getContentPane());
+		   Toolkit tk = Toolkit.getDefaultToolkit ();
+		   Dimension winDim = tk.getScreenSize ();
+		   int frWidth = (int)(winDim.width*.4);
+		   frHeight = (int) (winDim.height*.5);
+		   frame.setSize (new Dimension (frWidth,frHeight));
+		   frame.setVisible(true);
+		   frame.setResizable(false);  
+		 } 
+	private static void addStuffToFrame(Container pane) {
+		pane.setLayout(new BorderLayout(5,0));
+		pane.setBackground(Color.BLACK);
+		JPanel westPanel = new JPanel (new GridLayout(6,1,10,5));
+	    JPanel centerPanel = new JPanel(new GridLayout(2,1,10,5));	    
+	    westPanel.setBackground(Color.BLACK);
+	    centerPanel.setBackground(Color.BLACK);
+	    
+		centerPanel.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent me) {
+				Point c = MouseInfo.getPointerInfo().getLocation();
+				if(c.y< 35+frHeight/2){ 
+					numLabel= 1;
+				}else{
+					numLabel = 2;
+				}
+			}});
+		
+	    final JLabel topLabel = new JLabel("TOP", JLabel.CENTER);
+	    final JLabel bottomLabel = new JLabel("BOTTOM", JLabel.CENTER);
+	    
+	    JButton westButton1 = new JButton("RED");
+	    westButton1.setBackground(Color.RED);
+	    westButton1.setOpaque(true);
+		westButton1.setBorderPainted(false);
+	    westButton1.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent a ){
+				if(numLabel== 1)topLabel.setBackground(Color.RED);
+				if(numLabel== 2)bottomLabel.setBackground(Color.RED);
+			}});
+	    westPanel.add(westButton1);
+	    JButton westButton2 = new JButton("YELLOW");
+	    westButton2.setBackground(Color.YELLOW);
+	    westButton2.setOpaque(true);
+		westButton2.setBorderPainted(false);
+	    westButton2.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent a ){
+				if(numLabel== 1)topLabel.setBackground(Color.YELLOW);
+				if(numLabel== 2)bottomLabel.setBackground(Color.YELLOW);
+			}});
+	    westPanel.add(westButton2);
+	    JButton westButton3 = new JButton("GREEN");
+	    westButton3.setBackground(Color.GREEN);
+	    westButton3.setOpaque(true);
+		westButton3.setBorderPainted(false);
+	    westButton3.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent a ){
+				if(numLabel== 1)topLabel.setBackground(Color.GREEN);
+				if(numLabel== 2)bottomLabel.setBackground(Color.GREEN);
+			}});
+	    westPanel.add(westButton3);
+	    JButton westButton4 = new JButton("BLUE");
+	    westButton4.setBackground(Color.BLUE);
+	    westButton4.setOpaque(true);
+		westButton4.setBorderPainted(false);
+	    westButton4.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent a ){
+				if(numLabel== 1)topLabel.setBackground(Color.BLUE);
+				if(numLabel== 2)bottomLabel.setBackground(Color.BLUE);
+			}});
+	    westPanel.add(westButton4);
+	    JButton westButton5 = new JButton("MAGENTA");
+	    westButton5.setBackground(Color.MAGENTA);
+	    westButton5.setOpaque(true);
+		westButton5.setBorderPainted(false);
+	    westButton5.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent a ){
+				if(numLabel== 1)topLabel.setBackground(Color.MAGENTA);
+				if(numLabel== 2)bottomLabel.setBackground(Color.MAGENTA);
+			}});
+	    westPanel.add(westButton5);
+	    JButton westButton6 = new JButton("ORANGE");
+	    westButton6.setBackground(Color.ORANGE);
+	    westButton6.setOpaque(true);
+		westButton6.setBorderPainted(false);
+	    westButton6.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent a ){
+				if(numLabel== 1)topLabel.setBackground(Color.ORANGE);
+				if(numLabel== 2)bottomLabel.setBackground(Color.ORANGE);
+			}});
+	    westPanel.add(westButton6);
+	    topLabel.setOpaque(true);				// Use opaque to be able to see through the buttons
+	    bottomLabel.setOpaque(true);			// To enable you to see all color on the button.
+	    centerPanel.add(topLabel);
+	    centerPanel.add(bottomLabel);
+	    westPanel.setOpaque(true);
+	    pane.add(westPanel, BorderLayout.WEST);
+	    pane.add(centerPanel, BorderLayout.CENTER);
+	}
+	public static void main(String[] args) {
+		makeAFrame();
+	   }
+	
+}
+
+
