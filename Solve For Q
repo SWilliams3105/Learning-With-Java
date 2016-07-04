@@ -1,0 +1,38 @@
+
+public class SolveForQ {
+
+	public static void main(String[] args) {
+		// Seth Williams
+		// CS152L
+		// Homework problem #1
+		// Finding a solution to a complex mathematical problem through the use of code.
+
+		double x1 = 1;
+		double x2 = 3;
+		double x3 = 5;			
+		double y = 4;
+
+		double FirstPart = (4*(Math.pow(x1,2)));
+		double SecondPart = (4*(Math.pow(x2,2)));
+		double ThirdPart = (4*(Math.pow(x3,2)));
+
+		double ABC = FirstPart + SecondPart + ThirdPart;
+
+		double D = Math.pow(x1+x2+x3,2);
+		double E = (3*(y-1));
+		double G = Math.sqrt((ABC-D)/E);
+		try {
+			Thread.sleep(1000);
+		}
+		catch (InterruptedException ex)
+		{
+
+		}
+
+		System.out.println("\n" + "\t" + "The variable Q is equal to " +  G);
+
+
+	}
+
+}
+
