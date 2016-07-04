@@ -1,0 +1,46 @@
+import java.util.Scanner;
+public class Lights {
+
+	public static void main(String[] args) {
+		// Learning about switch statements
+
+		
+		Scanner keyboard = new Scanner(System.in) ;
+		System.out.println("Input & light value");
+		
+		try{
+		int light = keyboard.nextInt();
+		
+		
+		switch(light) {
+		
+		case 1000: System.out.println("Light is red.");
+		break;
+		case 1: System.out.println("light is green");
+		break;
+		case 2: System.out.println("Light is yellow");
+		break;
+		default: System.out.println("Four way stop");
+		break;
+		}
+		
+		}
+		catch(Exception e) {
+			System.out.println("You did not enter an integer."
+							   + " Run Again.");
+		}
+		keyboard.close();
+		
+		
+		
+		
+		
+		}
+		
+		
+		
+		
+		
+	
+
+}
