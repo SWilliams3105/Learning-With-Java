@@ -1,0 +1,90 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+
+public class ArrowButtons {
+
+	public static void main(String[] args) {
+
+		JFrame frame = new JFrame("Arrow Buttons");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);							//Looks in JFrame and Makes window close
+		frame.getContentPane().setBackground(Color.BLUE);								//Sets color
+
+
+
+		addStuffToGUI(frame.getContentPane());											// This creates a new class named StrawberryPanel
+
+		frame.setSize(500,500);
+	  //frame.pack();																	// Packs it around what you have.
+		frame.setVisible(true);															// This has to be there.		
+
+
+	}
+
+	private static void addStuffToGUI(Container pane) {
+
+		BufferedImage IconArrowUp = null;
+		BufferedImage iconArrowDown = null;
+		pane.setLayout(new BorderLayout());
+		try{
+			IconArrowUp = ImageIO.read(new File("ArrowUp.jpg"));
+			iconArrowDown = ImageIO.read(new File("Down.png"));
+		}
+		catch (IOException e) {
+			System.out.println("Did Not Read File");
+		}
+		JButton arrowUp = new JButton(new ImageIcon(IconArrowUp));						// Makes the arrowup.png into a button.
+		arrowUp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				Color c = pane.getBackground();											// Shows the color of the background
+				if(c.equals(Color.BLUE)) {												// c.equals means equals for objects, == won't work.
+					pane.setBackground(Color.RED);										// If background color is blue, make it red, if not, return it to blue.
+				}else{
+					pane.setBackground(Color.BLUE);
+				}
+			}});
+		arrowUp.setContentAreaFilled(false);											// Makes the button transparent
+		arrowUp.setBorderPainted(false);												// takes away the border from the button
+		arrowUp.setBorder(null);														// This also takes away the border 			THIS IS EASIER TO USE
+		pane.add(arrowUp, BorderLayout.NORTH);											// Puts it at the top of the frame
+		
+
+		
+		
+		
+		
+		
+		JButton arrowDown = new JButton(new ImageIcon(iconArrowDown));
+		arrowDown.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent aa) {
+				Color b = pane.getBackground();
+				if (b.equals(Color.BLUE)) {
+					pane.setBackground(Color.GREEN);								// If background color is blue, then turn it to green, if not then return color to blue
+				} else{
+					pane.setBackground(Color.BLUE);
+				}
+			}});
+		arrowDown.setContentAreaFilled(false);
+		arrowDown.setBorderPainted(false);
+		arrowDown.setBorder(null);
+		pane.add(arrowDown, BorderLayout.SOUTH);
+		
+		
+
+
+
+
+	}
+
+}
