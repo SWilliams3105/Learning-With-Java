@@ -1,0 +1,109 @@
+import java.awt.Color;
+import java.awt.Container;
+
+import javax.swing.JFrame;
+
+public class MyPolygon {
+
+	/**
+	 Seth Williams
+	 CS152L
+	 Homework Problem #2
+	 Creating a GUI and drawing a polygon and shifting it mathematically.
+	  */
+	public static void main(String[] args) {
+		
+		JFrame frame = new JFrame ("MyPolygon");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setBackground(Color.BLUE);
+
+		frame.add(new PolygonPanel());
+		frame.setSize(1400, 800);
+		frame.setLocation(100,100);
+		frame.setVisible(true);
+		//frame.pack();
+	}
+}
+:::::::::::::::::::::::::::POLYGON PANEL::::::::::::::::::::::::
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+public class PolygonPanel extends JPanel {
+	/**
+	 Seth Williams
+	 CS152L
+	 Homework Problem #2
+	 Creating a GUI and drawing a polygon and shifting it mathematically.
+	  */
+	public void paintComponent (Graphics g) {
+																					// Instead of x*2, do x+20
+		int u1 = 300;
+		int u2 = 300;
+		int u3 = 150;
+		int u4 = 150;
+		int u5 = 200;
+		int u6 = 300;
+		int u7 = 340;
+		
+		int v1 = 20;
+		int v2 = 40;
+		int v3 = 40;
+		int v4 = 75;
+		int v5 = 55;
+		int v6 = 75;
+		int v7 = 80;
+		
+		g.setColor(Color.BLACK);
+		int [ ] x = {u1, u2, u3, u4, u5, u6, u7};
+		int [ ] y = {v1, v2, v3, v4, v5, v6, v7};
+		g.fillPolygon(x, y, 7);
+		
+		int x1 = u1+50;
+		int x2 = u2+50;
+		int x3 = u3+50;
+		int x4 = u4+50;
+		int x5 = u5+50;
+		int x6 = u6+50;
+		int x7 = u7+50;
+		
+		int y1 = v1+50;
+		int y2 = v2+50;
+		int y3 = v3+50;
+		int y4 = v4+50;
+		int y5 = v5+50;
+		int y6 = v6+50;
+		int y7 = v7+50;
+		
+		g.setColor(Color.PINK);
+		int [ ] x11 = {x1, x2, x3, x4, x5, x6, x7};
+		int [ ] y11 = {y1, y2, y3, y4, y5, y6, y7};
+		g.fillPolygon(x11, y11, 7);
+		
+		int x12 = x1*2;
+		int x21 = x2*2;
+		int x31 = x3*2;
+		int x41 = x4*2;
+		int x51 = x5*2;
+		int x61 = x6*2;
+		int x71 = x7*2;
+		
+		int y12 = y1*2;
+		int y21 = y2*2;
+		int y31 = y3*2;
+		int y41 = y4*2;
+		int y51 = y5*2;
+		int y61 = y6*2;
+		int y71 = y7*2;
+		
+		g.setColor(Color.YELLOW);
+		int [ ] x121 = {x12, x21, x31, x41, x51, x61, x71};
+		int [ ] y121 = {y12, y21, y31, y41, y51, y61, y71};
+		g.fillPolygon(x121, y121, 7);
+		
+	}
+	
+	
+}
