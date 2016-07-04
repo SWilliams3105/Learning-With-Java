@@ -1,0 +1,56 @@
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
+import javax.swing.JFrame;
+
+
+public class ClickingMouse {
+
+	public static void main(String[] args) {
+		JFrame frame =  new JFrame("Mouse Clicks");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.add(new MyPanel());
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();										// Imports toolkit
+		frame.setSize((int)( .5* screenSize.getWidth()), (int) (.5* screenSize.getHeight()));   				// Makes a double an int
+		frame.setVisible(true);
+
+
+	}
+
+}
+
+
+::::::::::::::::::::::::::::CLICKING MOUSE PANEL ::::::::::::::::::::::::::::::::::::::::
+
+
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JPanel;
+
+
+public class MyPanel extends JPanel {
+
+	public void paintComponent (Graphics g){
+		final Graphics2D g2D = (Graphics2D)g;								// We're using Graphics2D
+		g2D.setColor(Color.BLACK);											// Making color black
+		g2D.fillRect(0,0,getWidth(), getHeight());							
+		addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent me) {
+				Point c = MouseInfo.getPointerInfo().getLocation();
+				int cx = c.x;
+				int cy = c.y;
+				System.out.println(cx +"  " + cy);
+			}
+		});
+
+	}
+
+
+}
