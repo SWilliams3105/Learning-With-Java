@@ -1,0 +1,58 @@
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+
+public class Halloween extends JPanel {
+	
+	public void paintComponent (Graphics g) {
+		
+	
+		
+		g.setColor(Color.ORANGE);
+		g.fillOval(85,50,300,300);
+		g.setColor(Color.BLACK);
+		int [ ] x = {300, 300, 150, 150, 200, 300};
+		int [ ] y = {20, 40, 20, 75, 55, 75};
+		g.fillPolygon(x, y, 6);
+
+		g.setColor(Color.YELLOW);
+		g.fillRect(175,130,40,20);
+		g.fillRect(275,130,40,20);
+		
+		g.setColor(Color.RED);
+		g.drawRect(275,130,40,20);
+		g.drawRect(175,130,40,20);
+		
+		g.setColor(Color.BLACK);
+		g.fillRect(185,250,100,20);
+		g.fillOval(300,135,10,10);
+		g.fillOval(200,135,10,10);
+		
+		g.setColor(Color.WHITE);
+		g.fillRect(195,250,25,10);
+		g.fillRect(235,250,25,10);
+		
+		g.setColor(Color.RED);
+		g.drawArc(155, 75, 75, 550, 50, 80);
+		g.drawArc(260, 75, 75, 550, 50, 80);
+		
+		g.drawLine(310,130,310,124);
+		g.drawLine(300,130,300,124);
+		g.drawLine(285,130,285,124);
+		
+		g.drawLine(185,130,185,124);
+		g.drawLine(195,130,195,124);
+		g.drawLine(205,130,205,124);
+		
+		g.drawArc(105, 45, 75, 400, 120, 90);
+
+		
+		
+		
+		
+	}
+
+}
