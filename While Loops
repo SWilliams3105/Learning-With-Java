@@ -1,0 +1,33 @@
+
+public class WhileLoops {
+
+	public static void main(String[] args) {
+		// While true keeps looping
+
+
+		int x = 0;
+		while (x<=5) {
+			x++; 
+		} System.out.println(x);
+		
+
+
+		int y = 0;
+		do {
+			y++; //This is what we're doing while A is true
+		} while (y<=5); // A
+		System.out.println(y);
+	}
+	{ // When deleting this {, replace it with a "}" DO NOT FORGET
+}
+
+{
+ double x = (1972 | 1984 | 1996 | 2008 | 2020); 
+ 	while (x ==( 1972 | 1984 | 1996 | 2008 | 2020)) {
+ 		System.out.println("Your dinner is ready");
+ 		
+ 		
+ 		
+ 	}
+}
+}
