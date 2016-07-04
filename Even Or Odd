@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class EvenOrOdd {
+
+	public static void main(String[] args) {
+		// Seth Williams
+		// CS152L
+		// Homework Question #4
+		// EvenOrOdd
+		// Determining whether a number is an even or odd number
+		// I'd like to note that the number 0 is an even number
+		// Here is my proof --> https://www.youtube.com/watch?v=8t1TC-5OLdM
+
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Please Enter A Positive Number So We Can Determine Whether It Is An Even Or Odd Integer.");
+
+		try {
+			int UserInput = keyboard.nextInt();	
+
+			String[] Numbers = {"Even", "Odd"};
+			{int RemNum = (UserInput) % 2;
+			System.out.println("The Integer You Have Entered is " + Numbers[RemNum] + ".");
+			}
+		}
+		catch (Exception UserInput) {
+			System.out.println("Please Enter A Positive Integer between 1 and So We Can Calculate If It Is Even Or Odd.");
+		}
+		{
+			keyboard.close();
+		}
+	}
+
+}
