@@ -1,0 +1,28 @@
+import java.awt.Color;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class UselessButton extends JFrame {
+
+	private static final long serialVersionUID = 1L;	// Ask about this						
+
+	public static void main(String[] args) {
+		createAndShowGUI();
+
+	}
+
+	private static void createAndShowGUI() {
+		
+		JFrame frame = new JFrame("Seth's Useless Button");
+		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);							//Makes window close
+		frame.getContentPane().setBackground(Color.BLUE);						//Sets color
+		
+		
+		JButton UselessButton = new JButton("Useless Button");
+		frame.add(UselessButton);
+		frame.setSize(500,100);
+		frame.setVisible(true);
+	}
+
+}
