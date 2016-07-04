@@ -1,0 +1,91 @@
+import java.util.List;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+
+
+
+public class Grades {
+
+	/** Seth Williams
+	 CS152L
+	 Homework Question #5
+	 Calculating the average of a person's grades, through an imported text file, then exporting the data into another text file.
+	*/
+	public static void main(String[] args) throws IOException{
+
+		List<String> list = new ArrayList<String>();
+		try{
+			BufferedReader reader = new BufferedReader(new FileReader("Scores.txt"));
+			String line = null;
+			while ((line = reader.readLine()) != null) {
+				list.add(line);
+			}
+		} catch (IOException e) {
+			System.err.format("IOException");
+		}
+		String [] arrayScores = list.toArray(new String[list.size()]);
+		BufferedWriter writer = null;
+		try{
+			writer = new BufferedWriter(new OutputStreamWriter (
+					new FileOutputStream("FinalGrades.txt"), "utf-8"));
+
+		
+
+
+		for (int i = 0; i < arrayScores.length; i++) {
+			try{
+				System.out.println(arrayScores[i]);
+				String[] Averages = arrayScores[i].split(" ");
+				String names = Averages[0];
+				//String Names = Averages[0];
+				Integer Average = Integer.valueOf(Averages[1]);
+				Integer Average2 = Integer.valueOf(Averages[2]);
+				Integer Average3 = Integer.valueOf(Averages[3]);
+				Integer Average4 = Integer.valueOf(Averages[4]);
+				double AverageSum = (Average + Average2 + Average3 + Average4);
+				double k = AverageSum /4;
+				String FinalGrade = "";
+				if(k>=90){
+					FinalGrade = "A";
+				}else if(k>=80 && k<90){
+					FinalGrade = "B";
+				}else if(k>=70 && k<80){
+					FinalGrade = "C";
+				}else if(k>=60 && k<70){
+					FinalGrade = "D";
+				}else{
+					FinalGrade = "F";
+				}
+				//writer.write(""+Average +" " + Average2 + " " +Average3 + " " + Average4 + "\n");
+				writer.write(names + " has an average grade of " + k + " and their final grade is a/an " +FinalGrade + "." + "\n");
+
+
+
+
+
+			} catch (NumberFormatException|IOException ee) {
+				System.out.println("Error Splitting");
+				ee.printStackTrace();
+
+			
+			}
+		}
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		try{
+			writer.close();
+		}catch(IOException e){
+			System.out.println("Writer not closed.");
+		}
+	}
+}
+
+
+
+
