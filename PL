@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+
+public class PL {
+
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Give me one word and I will convert it to a Pig Latin!");
+		String word =  keyboard.next();
+		String firstLetter = Character.toString(word.charAt(0));
+		if(firstLetter.equalsIgnoreCase("a")) System.out.println("Vowel!!!");
+		String newWord = word.replaceFirst(firstLetter, "");
+		newWord = newWord + firstLetter + "ay";
+		System.out.println(newWord);
+	}
+
+}
