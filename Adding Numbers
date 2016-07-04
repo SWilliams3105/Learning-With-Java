@@ -1,0 +1,23 @@
+
+public class AddEmUp {
+
+	public static void main(String[] args) {
+		// Seth Williams
+		// Sept 1, 2015
+		// CS152L Homework Problem #3
+		// Adding Up 25 Consecutive Numbers By Their Relative Powers
+
+		long count = 0; 												// We start with a count of zero
+
+		for (long c = 1; c <= 25; c++)									// Starting with 0, Going to multiply greater than or equal to 25 times. 
+		{
+
+			count = count + (long) ( Math.pow (-3, c)); 				// We're doing "c" to the power of "c", doing this 25 times.
+
+
+	}
+
+	System.out.println("\n" + "\t" + "Count = " + count); 				// Printing into console what the count is.
+
+		}
+	}
