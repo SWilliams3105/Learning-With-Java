@@ -1,0 +1,17 @@
+
+public class MyZ {
+
+	public static void main(String[] args) {
+		// Seth Williams
+		//CS152L-501
+		//Homework Problem #1
+		
+		double x = 2;
+		double y = 5;
+		
+		double Z = (y -1 + (1)/(2+ (3 /(1-x))));
+		System.out.println("Z = " + Z);
+
+	}
+
+}
