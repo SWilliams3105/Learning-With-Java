@@ -1,0 +1,9 @@
+
+public class MyGoldenRatio {
+
+	public static void main(String[] args) {
+		
+		double N = ((1 + Math.sqrt(5))/2);
+		System.out.println(N);
+		}
+	}
