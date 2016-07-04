@@ -1,0 +1,28 @@
+
+public class Backward {
+	
+	// Seth Williams
+	// CS152L
+	// Homework Problem #2
+	// Counting Backwards From 25 to -25, While Displaying The Steps Taken In Console
+
+
+	public static void main(String[] args) {
+		
+		System.out.println("We're counting backwards from 25 to -25");
+		
+															// When wanting to count backwards with for statements, in the steps taken section
+		for( int x = 25 ; x > -30 ; x = x- 5 ) {			// use "x = x -5"
+			try {
+				Thread.sleep(500);
+			}
+			catch (InterruptedException ex)					// We use this to delay the amount of time console puts things out.
+			{
+				
+			}
+			System.out.println("The current count is " + x);
+		}
+
+	}
+
+}
