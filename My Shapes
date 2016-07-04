@@ -1,0 +1,59 @@
+import java.awt.Color;
+
+import javax.swing.JFrame;
+
+
+public class MyShapes {
+
+	public static void main(String[] args) {
+
+		JFrame frame = new JFrame("Seth's Shapes");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);							//Makes window close
+		frame.getContentPane().setBackground(Color.BLUE);								//Sets color
+
+		frame.add(new MyPanel ());
+
+		frame.setSize(500,500);
+
+		frame.setLocation(200,220);														// Sets where the window pops up relative to your screen.	
+
+		frame.setVisible(true);
+
+	}
+
+}
+
+:::::::::::::::::::::::::MY SHAPES PANEL :::::::::::::::::::::::::::::
+
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+																	// You can use drawOval, drawRect, setColor, fillOval, fillRect
+import javax.swing.JPanel;
+
+
+public class MyPanel extends JPanel {
+
+	public void paintComponent (Graphics g){						
+
+		
+		g.setColor(Color.BLACK);
+		g.fillRect (0,0, getWidth(), getHeight()); 					// This is getting the height and the width of the box from the class -> "My Shapes"
+		
+		
+		g.setColor(Color.BLUE);										//Creates the outline of blue.
+		g.fillOval(50,100,100,200);	
+		g.setColor(Color.YELLOW); 									// This line draws the blue rectangle, starts at the upper left corner.
+		g.fillOval(100,100,200,200);								// Fills the rectangle with blue.
+
+
+		g.setColor(Color.GREEN);
+		g.drawRect(150,100,100,200);
+		g.drawRect(170,80,100,200);
+	
+
+																	// To make a circle, make the height and the length the same.
+	}
+
+}
