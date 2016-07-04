@@ -1,0 +1,75 @@
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+
+public class Alphabet {
+
+	/** Seth Williams
+	 CS152L
+	 Homework Question #4
+	Creating a GUI that displays the alphabet
+	*/
+	static JFrame frame;
+	static JLabel clock;
+	static Timer timer;
+	static int counter = 64;
+
+	public Alphabet() {
+		frame = new JFrame();
+		frame.setSize(750, 500);
+		clock = new JLabel();
+		clock.setMinimumSize(new Dimension(750,100));
+		clock.setFont(new Font("LucidatypewriterBold", Font.BOLD, 24));
+		try{
+			Thread.sleep(1000);	
+		}catch(InterruptedException e){
+
+		}
+
+		timer = new Timer();
+		timer.schedule(new Countdown(),0,1000);
+	}
+
+	class Countdown extends TimerTask{
+
+		public void run() {
+
+			if (counter <90){
+				counter++;
+
+				System.out.println((char) counter);
+				clock.setText(Character.toString ((char) counter));
+				//clock.setText(""+counter);
+
+			}else{
+				clock.setText("Now you know your ABC's, next time won't you sing with me!");
+			}
+
+			frame.add(clock);
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+
+				e.printStackTrace();
+			}
+		}
+	}
+	public static void main(String[] args) {
+
+		frame = new JFrame("Countdown");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(new Dimension(1100,300));
+		frame.setLayout(new FlowLayout());
+		new Alphabet();
+		//frame.pack();
+		frame.setVisible(true);
+
+	}
+
+}
