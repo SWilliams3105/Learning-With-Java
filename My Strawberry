@@ -1,0 +1,76 @@
+import java.awt.Color;
+
+import javax.swing.JFrame;
+
+
+public class MyStrawberry {
+																						// The image for strawberry is in JRE System Library
+	
+	public static void main(String[] args) {
+		
+		
+		JFrame frame = new JFrame("My Strawberry");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);							//Looks in JFrame and Makes window close
+		frame.getContentPane().setBackground(Color.BLUE);								//Sets color
+
+
+		
+		frame.add(new StrawberryPanel());												// This creates a new class named StrawberryPanel
+
+		frame.setSize(500,500);
+		frame.setVisible(true);
+		
+
+	}
+
+}
+
+
+
+::::::::::::::::::::::STRAWBERRY PANEL:::::::::::::::::::::::::::::
+
+
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.awt.Color;
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+
+
+public class StrawberryPanel extends JPanel {
+
+
+	BufferedImage img;
+	public void paintComponent(Graphics g) {														// This is a method
+		try{
+			img = ImageIO.read(new File ("strawberry.jpg"));										// Imports the image from JRE System Library
+			g.drawImage(img, 0, 0, null);															// Puts the image on the screen, and then "0, 0" puts it on the top left corner. Always use "null" as the 4th argument because
+																									// a number won't work.
+
+		}
+		catch (IOException e) {
+			System.out.println("Image not read");
+		}
+		int width = img.getWidth();
+		int height = img.getHeight();
+		Color origColor, rgb;
+		int origB, origR, origG;
+
+
+		for(int x = 0; x<width; x++) {
+			
+			for(int y = 0; y < height; y++) {
+				origColor = new Color(img.getRGB(x, y) , true);
+				origB = origColor.getBlue();														// Gets the amount of blue pixels within the image
+				origR = origColor.getRed();															// Gets the amount of red pixels within the image
+				origG = origColor.getGreen();														// Gets the amount of green pixels within the image
+				rgb = new Color(origR, origG, origB);												// The layers which get set on(Colors), it orders them by the way you put them.
+				img.setRGB(x, y, rgb.getRGB());
+			}
+		}
+		g.drawImage(img, 100, 100, 2*width, 2*height, null);
+	}
+
+}
