@@ -1,0 +1,70 @@
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+								// You can use this for a different layout. ---> https://docs.oracle.com/javase/tutorial/uiswing/layout/gridbag.html
+
+public class ButtonBox {
+	
+	
+	// Seth Williams
+	// CS152L
+	// Homework Question #4
+	// Creating a class, with multiple methods that create different buttons.
+
+	public static void main(String[] args) {
+		
+		
+	
+		JFrame frame = new JFrame ("ButtonBox");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setBackground(Color.BLUE);
+		
+		addStuffToFrame(frame.getContentPane());
+
+		
+		frame.setSize(800, 800);
+		frame.setLocation(100,100);
+		frame.setVisible(true);
+		frame.pack();
+	}
+
+	private static void addStuffToFrame(Container pane) {
+		
+		pane.setLayout(new BorderLayout());
+		JButton Button1 = new JButton("<html><center><i>Click this button if you own a dog!</i></center></html>");
+		Button1.setPreferredSize(new Dimension(100, 100)); 	
+		Button1.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				System.out.println("Hooray for dogs!");
+			}});
+		pane.setLayout(new BorderLayout());
+		JButton Button2 = new JButton("<html><i>Click this button if you own a cat.</i></html>");
+		Button2.setPreferredSize(new Dimension(100, 100));
+		Button2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				System.out.println("Hooray for cats!");
+			
+			}});
+		pane.setLayout(new BorderLayout());
+		JButton Button3 = new JButton("<html><i>Click this button if you own both a cat and a dog.</i></html>");
+		Button3.setPreferredSize(new Dimension(100, 100));
+		Button3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				System.out.println("The more the merrier!");
+			
+			}});
+		pane.add(Button1, BorderLayout.WEST);
+		pane.add(Button2, BorderLayout.NORTH);
+		pane.add(Button3, BorderLayout.EAST);
+		
+	}
+
+}
