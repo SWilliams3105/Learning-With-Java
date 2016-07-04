@@ -1,0 +1,163 @@
+import java.awt.Color;
+import javax.swing.JFrame;
+
+public class MoleDay {
+	// Seth Williams
+	// CS152L
+	// Homework question #1
+	// Creating a Java GUI for Mole Day!
+	
+	public static void main(String[] args) {
+		
+
+		JFrame frame = new JFrame ("Happy Mole Day!");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setBackground(Color.BLUE);
+		
+		frame.add(new MyPanel());
+		frame.setSize(815, 840);
+		
+		
+		frame.setLocation(100,100);
+		
+		frame.setVisible(true);
+		
+	}
+
+}
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::SEPARATE CLASES::::::PROGRAM WON"T RUN BY THE WAY BECAUSE :::::::::::::::
+OF TWO CLASSED BEING IN ON FILE::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+
+public class MyPanel extends JPanel {
+	public void paintComponent (Graphics g) {
+
+		BufferedImage IconMoleDay = null;
+		BufferedImage IconMoleDayWebsite = null;
+		g.setColor(Color.WHITE);								// Background color
+		g.fillRect( 0, 0,  getWidth(), getHeight());			// Background size
+
+		g.setColor(Color.BLUE);									
+		g.fillRect(0, 0, 400, 400);
+		g.setColor(Color.RED);
+		g.fillRect(400, 400, 400, 400);
+		g.setColor(Color.GREEN);
+		g.fillRect(400, 0, 400, 400);
+		g.setColor(Color.YELLOW);
+		g.fillRect(0, 400, 400, 400);
+		
+		try{
+			IconMoleDay = ImageIO.read(new File("MoleDay.jpg"));
+			IconMoleDayWebsite = ImageIO.read(new File("MoleDayWebsite.png"));
+			g.drawImage(IconMoleDay, 280, 250, null);
+			g.drawImage(IconMoleDayWebsite, 565, 610, null);
+		} catch(IOException E) {
+			System.err.println("Image not read, please re-run program");
+		}
+		
+		
+		
+		
+		g.setColor(Color.BLACK);
+		g.fillRect(215, 90, 5, 50);					// This is responsible for the number 6
+		g.fillRect(220, 90, 20, 5);
+		g.fillRect(220, 135, 20, 5);
+		g.fillRect(235, 110, 5, 30);
+		g.fillRect(215, 110, 20, 5);
+		
+		g.fillRect(245, 135, 5, 5); 				// This is responsible for the decimal point
+		
+		g.fillRect(255, 90, 5 , 50);				// This is responsible for the number 0
+		g.fillRect(255, 90, 25, 5);
+		g.fillRect(255, 135, 25, 5);
+		g.fillRect(275, 90, 5 , 50);
+		
+		g.fillRect(290, 90, 25, 5);					// This is responsible for the number 2
+		g.fillRect(310, 90, 4, 22);
+		g.fillRect(290, 110, 25, 5);
+		g.fillRect(290, 115, 4 , 25);
+		g.fillRect(290, 135, 20, 5);
+		
+		g.fillRect(325, 90, 25, 5);					// This is responsible for the number 2
+		g.fillRect(345, 90, 5 , 22);
+		g.fillRect(325, 110, 25, 5);
+		g.fillRect(325, 110, 5 , 25);
+		g.fillRect(325, 134, 20, 5);
+	
+		
+		//g.fillOval(400, 65, 10, 10);				// This is responsible for the multiplication sign
+		g.fillRect(390, 105, 5, 5);
+		g.fillRect(395, 110, 5, 5);
+		g.fillRect(400, 115, 5, 5);
+		g.fillRect(405, 110, 5, 5);
+		g.fillRect(410, 105, 5, 5);
+		g.fillRect(395, 120, 5, 5);
+		g.fillRect(390, 125, 5, 5);
+		g.fillRect(405, 120, 5, 5);
+		g.fillRect(410, 125, 5, 5);
+		
+		
+		
+
+		
+
+		g.fillRect(455, 90, 5 , 50);				// This is responsible for the 1
+		
+		g.fillRect(475, 90, 5 , 50);				// This is responsible for the number 0	
+		g.fillRect(475, 90, 25, 5);
+		g.fillRect(475, 135, 25, 5);
+		g.fillRect(495, 90, 5, 50);
+		
+		g.fillRect(525, 80, 10,2);					// This is responsible for the number 2 in the power of 23
+		g.fillRect(535, 80, 2, 10);
+		g.fillRect(527, 88, 10,2);
+		g.fillRect(525, 88, 2, 10);
+		g.fillRect(525, 98, 10,2);
+		
+		g.fillRect(545, 80, 10, 2);					// This is responsible for the number 3 in the power of 23
+		g.fillRect(555, 80, 2, 10);
+		g.fillRect(555, 90, 2, 10);
+		g.fillRect(545, 98, 10, 2);
+		g.fillRect(545, 89, 10, 2);
+		
+		g.fillOval(40, 190, 5, 5);
+		g.fillOval(450, 190, 5, 5);
+		g.fillOval(20, 590, 5, 5);
+		
+		
+		g.setColor(Color.WHITE);
+		g.drawString("Celebrated annually on October 23 from 6:02 a.m. to 6:02 p.m.", 50, 200);
+		g.drawString("    Mole Day commemorates Avogadro's Number (6.02 x 1023)",30, 210);
+		g.drawString("    which is a basic measuring unit in chemistry.", 30, 220);
+		
+		g.setColor(Color.BLACK);
+		g.drawString("For a given molecule, one mole is a mass (in grams)", 460, 200);
+		g.drawString("  whose number is equal to the molar mass of the molecule. ", 450, 210);
+		g.drawString("  For example, the water molecule has an molar mass of 18,", 450, 220);
+		g.drawString("  therefore one mole of water weighs 18 grams. Similarly, ",450,230);
+		g.drawString("  a mole of neon has a molar mass of 20 grams.", 450, 240);
+		
+		g.drawString("Browse this website to find out more about The National Mole Day", 30, 600);
+		g.drawString("  Foundation, how to become a member or just to read", 25, 610);
+		g.drawString("  some mole jokes.", 25, 620);
+		
+		g.setColor(Color.WHITE);
+		g.drawString("All Information Used Was From", 550, 600);
+		g.drawString("Respectively, the information used belongs to them.", 500,670);
+		
+		
+
+	}
+
+}
