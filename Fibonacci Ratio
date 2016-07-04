@@ -1,0 +1,28 @@
+
+public class MyFibonacciRatios {
+
+	public static void main(String[] args) {
+
+		long F [] = new long [50];
+		F[0] = 1;
+		F[1] = 1;
+		System.out.println(1 + "\n\n" + 1);
+		
+		for(int j = 2; j < 50; j++){
+		
+			F[j] = F[j-1] + F[j-2];
+			
+		
+			System.out.println(1.0 * F[j]/F[j-1]);
+			
+//			System.out.println("\n" + F[j]);
+			
+			// I observe that when you divide the first Fibonacci number by the second Fibonacci number, then the result is the golden ratio.
+			
+		}
+		
+		
+
+	}
+
+}
