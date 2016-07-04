@@ -1,0 +1,58 @@
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+
+public class Chronos {
+	
+	static JFrame frame;
+	static JLabel clock;
+	static Timer timer;
+	static int counter = 11;
+	
+	public Chronos() {
+		clock = new JLabel();
+		timer = new Timer();
+		timer.schedule(new Countdown(),0,1000);
+	}
+	
+	class Countdown extends TimerTask{
+		public void run() {
+			if (counter > 0){
+				counter--;
+				clock.setFont(new Font("LucidatypewriterBold", Font.BOLD, 48));
+				clock.setText(""+counter);
+				frame.add(clock);
+			}else{
+				clock.setText("Done!");
+				
+			
+			
+			
+			try{
+				Thread.sleep(2000);
+			}catch(InterruptedException e){
+				e.printStackTrace();
+			}
+			System.exit(0);
+			}
+		}
+	}
+	public static void main(String[] args) {
+		
+		frame = new JFrame("Countdown");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setPreferredSize(new Dimension(150,150));
+		frame.setLayout(new FlowLayout());
+		new Chronos();
+		frame.pack();
+		frame.setVisible(true);
+		
+	}
+
+}
