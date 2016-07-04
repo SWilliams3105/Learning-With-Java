@@ -1,0 +1,27 @@
+
+public class Fibonacci {
+
+				//Seth Williams
+				// CS152L
+				// Homework Question #2
+				// Writing a program that prints out the first 50 Fibonacci numbers.
+	
+	public static void main(String[] args) {
+		
+		
+		long F [] = new long [50];
+		F[0] = 1;
+		F[1] = 1;
+		System.out.println(1 + "\n\n" + 1);
+		
+		for(int j = 2; j < 50; j++){
+		
+			F[j] = F[j-1] + F[j-2];
+			
+			
+			System.out.println("\n" + F[j]);
+		}
+		
+	}
+
+}
