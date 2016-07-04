@@ -1,0 +1,20 @@
+
+public class ComparingStrings {
+
+	public static void main(String[] args) {
+
+		String a = "Annette";
+		String A = "Annette";
+		if(a.equals("Annette")) {
+			System.out.println("a.equals is true");
+		}
+		if (a==A) {
+			System.out.println("a==A is true");
+		}
+		if(a.equals(A)) {
+			System.out.println("a.equals(A) is true");
+		}
+
+	}
+
+}
