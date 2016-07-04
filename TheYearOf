@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+
+public class TheYearOf {
+
+	public static void main(String[] args) {
+		// Seth Williams
+		// Sept 3, 1972
+		// CS152L HomeWork Question #5
+		// Chinese Calendar Birth Year Calculator.
+		// The picture I based this entire thing off of can be found directly below.
+		// http://www.picshunger.com/wp-content/uploads/2014/11/chinese-zodiac-horoscope-animal-years.jpg
+
+
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Please Input A Birth Year Between 1972 & 2031!");
+		try{
+			int UserInput = keyboard.nextInt();
+
+			String[] Names = {"Rat","Oxen", "Tiger", "Rabbit","Dragon","Snake", 
+					"Horse", "Sheep", "Monkey", "Rooster", "Dog", "Pig"};
+
+			int Year = (UserInput -1972) % 12;	
+			System.out.println("Your were born in " + UserInput + " and your birth animal is a " + Names[Year] + ".");
+
+		} catch (Exception UserInput) {
+
+
+			System.out.println("Please Input An Integer Between 1972 And 2031");
+		}
+		keyboard.close();
+	}
+
+
+
+}
