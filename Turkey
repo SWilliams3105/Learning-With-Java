@@ -1,0 +1,84 @@
+import java.awt.Color;
+
+import javax.swing.JFrame;
+
+
+public class Turkey {
+	/**
+	 Seth Williams
+	 CS152L
+	 Homework Problem #1
+	 Drawing a turkey with Java's paint component
+	 */
+	public static void main(String[] args) {
+		JFrame frame = new JFrame ("Turkey!");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setBackground(Color.BLUE);
+		frame.add(new TurkeyPanel());
+		frame.setSize(815, 840);
+		frame.setLocation(0,0);
+		frame.setVisible(true);
+		
+	
+
+	}
+
+}
+:::::::::::TURKEY PANEL:::::::::::::::::::
+
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
+import javax.swing.JPanel;
+
+
+public class TurkeyPanel extends JPanel {
+	/**
+	 Seth Williams
+	 CS152L
+	 Homework Problem #1
+	 Drawing a turkey with Java's paint component
+	 */
+
+	public void paintComponent (Graphics g) {
+		g.setColor(Color.BLACK);
+		g.fillOval(185,185,480,480);
+		g.setColor(new Color(148,100,37));
+		g.fillOval(200,200,450,450);
+		g.setColor(Color.BLACK);
+		g.fillOval(440, 290, 120, 120);
+		g.fillOval(250, 290, 120, 120);
+		g.setColor(Color.WHITE);
+		g.fillOval(450, 300, 100, 100);
+		g.fillOval(260, 300, 100, 100);
+		g.setColor(Color.BLACK);
+		g.fillOval(470, 340, 30, 30);
+		g.fillOval(295, 340, 30, 30);
+		g.setColor(Color.RED);
+		int [ ] x1 = {400, 520, 400, 330};
+		int [ ] y1 = {580, 440, 420, 450};
+		g.fillPolygon(x1, y1, 4);
+		g.setColor(Color.YELLOW);
+		int [ ] x = {400, 350, 400, 420, 500, 495};
+		int [ ] y = {580, 450, 430, 430, 440, 450};
+		g.fillPolygon(x, y, 6);
+		g.setColor(Color.RED);
+		int [ ] x2 = {500,520,530,520,500,490,490,490,490,500};
+		int [ ] y2 = {450,480,530,570,600,550,530,510,505,450};
+		g.fillPolygon(x2, y2, 10);
+		g.setColor(Color.BLACK);
+		g.setFont(new Font("LucidatypewriterBold", Font.BOLD, 24));
+		g.drawString("Gibble-Gobble-Glib-Glob-Gloob", 220, 100);
+		;
+		
+		
+		
+
+		
+	
+	}
+}
