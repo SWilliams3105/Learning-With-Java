@@ -1,0 +1,99 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class MyMasterMind {
+	/**
+	 Seth Williams
+	 CS152L
+	 Homework Question #3
+	 Creating a program that has the user guess a random 4 digit number, and seeing if it's the same as the computer's number.
+	 */
+
+	// Create instructions
+	private static final String banner = ""
+			+ "\t\tWelcome to MyMasterMind!\n\n"
+			+ "INSTRUCTIONS:\n"
+			+ "Enter a four digit integer to try go guess the computer's number."
+			+ "Do not repeat any numbers as the program will not repeat any random numbers."
+			+ "\t- \n"
+			+ "\t- \n";
+	//	private static final int UPPER_RANGE_LIMIT = 0;
+
+
+	public static void main(String[] args){
+		// Implement the use of Scanner so the user can input their guess.
+		Scanner keyboard = new Scanner(System.in);
+		boolean playMore = true;
+		// Say while the user wants to play again, then start again.
+		/** IF(WORD.CONTAINS("E"):
+																	Useful for master-mind, checking colors.
+		 */
+	}																	
+
+	// Create the random 4 digit number, that is less than 6 but greater than 0; which will be the number that the user is trying to guess.
+
+	Random random1 = new Random(5);
+	Random random2 = new Random(5);
+	Random random3 = new Random(5);
+	Random random4 = new Random(5);
+	String randomNumber = random1 + "" + random2 + "" + random3 + "" + random4 + "";
+
+
+
+	// Say if place "0" of randomly generated number is equal to place "1, 2, or 3" then to generate a 
+	// different random number so that the numbers in "0, 1, 2, 3" spots will not repeat to each other
+	// From there, do the exact same thing, so that the program checks spot 0 against 1, 0 against 2, 0 against 3, 1 against 0, 1 against 2, 1 against 3,
+	// 2 against 0, 2 against 1, 2 against 3, 3 against 0, 3 against 1, 3 against 2.
+	// From there, if there is a repeating number, we'll have the code generate a new random number.
+
+
+
+	// Create a limit on the guess
+	// Have the user input a random 4 digit number between 0 - 7 (Which means their guess has to be 4 numbers that are between 1-6)
+	//so they can try to guess the program's number
+	void gameLoop(int guessLimit){
+		for(int i = 0; i < guessLimit; i++){
+
+
+			// Check the user's guess by checking each address of their guess and the programs random number.
+			// Meaning that the program will take the 0th position of user's input and match it with the 0th position of the randomly generated number
+			// Then it will take the 1st position from user's guess and see if it matches the 1st position of the random number that was generated.
+			// This will then repeat until every place of the user's answer has been guessed.
+
+			Object secret = null;
+			Object guess = null;
+			int[] result = checkGuess(secret,guess);
+
+			// If the user got any address of the 4 digit number correct, then the program will tell them what numbers they got correct and what place they are in.
+			// For example, if the number was 1234, and the places for the number war 0, 1, 2, and 3, where 1 would be in 0, 2 would be in 1, and so on
+
+		}
+		//If the user gets the answer correct, then the program will exit, and then loop asking the user if they'd like to play the game again.
+		// If the user doesn't get the answer correct, the game will give them 7 more chances to guess the correct number.
+		// If all 8 tries are used up, then the program will print out a statement saying that they've failed to guess the correct 
+		// number, the correct number will display, and the game will restart if the user says that they want to restart..
+		boolean playMore = true;
+		while(playMore){
+			System.out.println("Would you like to play? Y or N");
+			Scanner keyboard = null;
+			String UserInput = keyboard.nextLine();
+			if(UserInput.equalsIgnoreCase("Y")){
+				System.out.println(banner);
+				MyMasterMind game = new MyMasterMind();
+				game.gameLoop(1);
+
+			}
+			if(UserInput.equalsIgnoreCase("N")){
+				System.out.println("Thanks for playing.");
+				System.exit(0);
+			}
+		}
+	}
+
+
+
+	private int[] checkGuess(Object secret, Object guess) {
+		
+		return null;
+	}
+}
